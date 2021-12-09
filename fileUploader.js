@@ -98,7 +98,8 @@ module.exports = function(app){
                         fileUploader.onFileAdded(file);
                     }
                 }
-                fileUploader.$el.val(null)
+                if (fileUploader.mode == "b64") 
+                    fileUploader.$el.val(null)
             }
         });
 
