@@ -25,7 +25,7 @@ module.exports = function(app){
         fileUploader.classLabel     = (fileUploader.classLabel !== undefined)     ? fileUploader.classLabel      : fileUploader.getData('classlabel', '');
         fileUploader.classWrapper   = (fileUploader.classWrapper !== undefined)   ? fileUploader.classWrapper    : fileUploader.getData('classwrapper', '');
         fileUploader.files          = (fileUploader.files !== undefined)          ? fileUploader.files           : [...new Set(fileUploader.getData('files', '').split(','))];
-        fileUploader.allowed        = (fileUploader.allowed !== undefined)        ? fileUploader.allowed         : [...new Set(fileUploader.getData('allowed', '').split(','))];
+        fileUploader.allowed        = (fileUploader.allowed !== undefined)        ? fileUploader.allowed         : [...new Set(fileUploader.getData('allowed', '').replace(/\./g,'').trim().split(','))];
         fileUploader.multiple       = (fileUploader.multiple !== undefined)       ? fileUploader.multiple        : (parseInt(fileUploader.getData('maxfiles', 0)) !== 1 ? (fileUploader.$el.attr('multiple') !== undefined ? true : false) : false);
         fileUploader.maxFiles       = (fileUploader.maxFiles !== undefined)       ? fileUploader.maxFiles        : (fileUploader.multiple !== false ? parseInt(fileUploader.getData('maxfiles', 0)) : '1');
         fileUploader.dataAttr       = (fileUploader.dataAttr !== undefined)       ? fileUploader.dataAttr        : (fileUploader.getData('wizardkey',false) ? 'data-wizardkey':'name');
