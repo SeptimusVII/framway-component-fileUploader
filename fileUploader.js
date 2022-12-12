@@ -161,7 +161,7 @@ module.exports = function(app){
         // test file type
         // if (fileUploader.allowed && !fileUploader.allowed.includes(file.type.split('/')[1])) 
         // console.log(file.name.match(/[.].*/)[0].substring(1));
-        var fileType = file.name.match(/[.].*/) ? file.name.match(/[.].*/)[0].substring(1) : file.type.split('/')[1];
+        var fileType = (file.name.match(/[.].*/) ? file.name.match(/[.].*/)[0].substring(1) : file.type.split('/')[1]).toLowerCase();
         if (fileUploader.allowed && !fileUploader.allowed.includes(fileType)) 
             result = 'You can\'t upload a '+fileType+' file. Allowed extensions: '+fileUploader.allowed.join(', ');
         // test file size
