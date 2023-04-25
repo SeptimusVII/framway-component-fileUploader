@@ -4,7 +4,7 @@ module.exports = function(app){
     // FileUploader.debug = true;
     FileUploader.createdAt      = "2.0.0";
     FileUploader.lastUpdate     = "2.1.0";
-    FileUploader.version        = "1.1.0";
+    FileUploader.version        = "1.1.1";
     // FileUploader.factoryExclude = true;
     // FileUploader.loadingMsg     = "This message will display in the console when component will be loaded.";
     // FileUploader.requires       = [];
@@ -60,7 +60,7 @@ module.exports = function(app){
         fileUploader.$error = $(`<div class="fileUploader__error"></div>`).appendTo(fileUploader.$wrapper);
 
         if (app.components.includes('modalFW') && !fileUploader.$el.closest('.modalFW').length)
-            fileUploader.$previewItem.append('<div class="preview__zoomin modalFW__trigger ready" data-gallery="gallery-'+fileUploader.id+'"><i class="fa fa-search"></i></div>');
+            fileUploader.$previewItem.append(`<div class="preview__zoomin modalFW__trigger ready" ${(fileUploader.maxFiles > 1)?('data-gallery="gallery-'+fileUploader.id+'"'):''}><i class="fa fa-search"></i></div>`);
 
         if (fileUploader.helper){
             fileUploader.$helper = $(`
@@ -267,7 +267,7 @@ module.exports = function(app){
             var modalScript = new app.ModalFW({
                 name : 'modalFileUploader--'+utils.uniqid(),
                 $trigger: $(this),
-                gallery: 'gallery-'+fileUploader.id,
+                gallery: (fileUploader.maxFiles > 1)?'gallery-'+fileUploader.id:false,
                 content: img.clone(),
                 onClose: function(){
                     modalScript.destroy();
