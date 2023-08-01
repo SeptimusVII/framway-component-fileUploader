@@ -293,8 +293,8 @@ module.exports = function(app){
     }
 
     $(function () {
-        $('input[type=file]').not('.custom').not('.ck-hidden').fileUploader();
-        utils.addHtmlHook('input[type=file]:not(.custom)', function(item){
+        $('input[type=file]').not('.custom,.fileUploader,.ck-hidden').fileUploader();
+        utils.addHtmlHook('input[type=file]:not(.custom):not(.fileUploader)', function(item){
             item.fileUploader();
         });
     });
