@@ -3,8 +3,8 @@ module.exports = function(app){
     var FileUploader = Object.getPrototypeOf(app).FileUploader = new app.Component("fileUploader");
     // FileUploader.debug = true;
     FileUploader.createdAt      = "2.0.0";
-    FileUploader.lastUpdate     = "2.1.0";
-    FileUploader.version        = "1.1.1";
+    FileUploader.lastUpdate     = "2.4.0";
+    FileUploader.version        = "1.1.2";
     // FileUploader.factoryExclude = true;
     // FileUploader.loadingMsg     = "This message will display in the console when component will be loaded.";
     // FileUploader.requires       = [];

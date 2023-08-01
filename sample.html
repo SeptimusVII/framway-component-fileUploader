@@ -1,1 +1,14 @@
-<input name="pictureFile" data-files="https://i.imgur.com/awSmPZy.png,https://vansteenequentin.com/ZeldaLullaby.pdf,https://picsum.photos/500/500,https://vansteenequentin.com/ZeldaLullaby.pdf" type="file" data-allowed="jpg,jpeg,png,gif,pdf" accept="image/*,application/*" placeholder="Téléchargez un fichier" data-classLabel="btn-sm btn-bd-primary" data-classWrapper="m-bottom-x2" data-maxfiles="4" data-helper="true" data-maxsize="1500" data-onFileAdded="" data-onFileDeleted="" multiple>
+<input name="pictureFile" data-files="https://i.imgur.com/awSmPZy.png,https://vansteenequentin.com/ZeldaLullaby.pdf,https://picsum.photos/500/500,https://vansteenequentin.com/ZeldaLullaby.pdf" type="file" data-allowed="jpg,jpeg,png,gif,pdf" accept="image/*,application/*" placeholder="Téléchargez un fichier" data-classLabel="btn-sm btn-bd-primary" data-classWrapper="m-bottom-x2" data-maxfiles="4" data-helper="true" data-maxsize="1500" data-onFileAdded="" data-onFileDeleted="" multiple class="fileUploader">
+
+<constructor component="fileUploader">
+  <field type="separator" label="FileUploader parameters"></field>
+  <field type="text" label="Button label" target="placeholder" value="Download files" helper="Set the button's text"></field>
+  <field type="empty"></field>
+  <field type="text" label="Button css classes" target="data-classlabel" value="btn-sm btn-bd-primary" helper="add css classes to the button"></field>
+  <field type="text" label="Wrapper css classes" target="data-classwrapper" value="m-bottom-x2" helper="add css classes to the element's wrapper"></field>
+  <field type="text" label="Files allowed" target="data-allowed" value="jpg,jpeg,png,gif,pdf" helper="Defines a list of allowed files extensions, separated by comas"></field>
+  <field type="empty"></field>
+  <field type="number" label="Max number of files" target="data-maxfiles" value="" helper="Define the max number of files allowed"></field>
+  <field type="number" label="Max file size" target="data-maxsize" value="500" helper="Define files max size (in Mo)"></field>
+  <field type="checkbox" label="Display helpers" target="data-helper" selected="true" helper="If checked, display various text helper"></field>
+</constructor>
