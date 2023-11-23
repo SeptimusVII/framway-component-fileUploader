@@ -5,7 +5,8 @@ $preview--spacing : 3px;
 .fileUploader__preview{position: relative; margin: 0; @extend .d-grid,.cols-6,.cols-md-3,.cols-xs-2,.cols-xxs-1; gap: $preview--spacing;}
 .preview__item{position: relative;}
 .preview__loader,
-.preview__img{@extend .img-container,.r_1-1; border: 1px solid $primary; display: flex; justify-content: center; align-items: center; font-size: 3rem;
+.preview__img{@include img-container(); aspect-ratio: 1/1;background: none; border: 1px solid $primary; display: flex; justify-content: center; align-items: center; font-size: 3rem;
+	img{background: black;}
 	svg{opacity: 0.5;}
 }
 .preview__loader{color: rgba(body(font-color),0.2);}
